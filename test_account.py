@@ -26,16 +26,16 @@ class Test:
 
     def test_withdraw(self):
         # negative, zero, positive invalid, positive valid
-        self.a1.deposit(25)
-        assert self.a1.withdraw(25) is True
+        self.a1.deposit(20)
+        assert self.a1.withdraw(20) is True
         assert self.a1.get_balance() == 0
 
-        self.a1.deposit(15)
-        assert self.a1.withdraw(25) is False
-        assert self.a1.get_balance() == 15
+        self.a1.deposit(10)
+        assert self.a1.withdraw(20) is False
+        assert self.a1.get_balance() == 10
 
         assert self.a1.withdraw(-1.5) is False
-        assert self.a1.get_balance() == 15
+        assert self.a1.get_balance() == 10
 
         assert self.a1.deposit(0) is False
-        assert self.a1.get_balance() == 15
+        assert self.a1.get_balance() == 10
